@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-ibm-plex-sans-arabic), ui-sans-serif, system-ui,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+
+  --color-background: #ffffff;
+  --color-foreground: #000000;
+  --color-muted: #f5f5f5;
+  --color-border: #e5e5e5;
+}
+
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+}
+
+@keyframes clients-marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes clients-marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.clients-marquee--left {
+  animation: clients-marquee-left 55s linear infinite;
+}
+
+.clients-marquee--right {
+  animation: clients-marquee-right 60s linear infinite;
+}
+
+.clients-marquee-wrap:hover .clients-marquee {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clients-marquee--left,
+  .clients-marquee--right {
+    animation: none;
+  }
+}
+
+@keyframes contact-ring {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.03);
+  }
+}
+
+.contact-whatsapp-ring {
+  animation: contact-ring 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-whatsapp-ring {
+    animation: none;
+  }
+}
