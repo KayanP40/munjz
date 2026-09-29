@@ -64,49 +64,48 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="border-t border-black/10 bg-white text-black"
+      className="border-t border-black/10 bg-[#f7f7f7] text-black"
       aria-labelledby="contact-heading"
     >
-      <div className="mx-auto max-w-3xl px-6 py-20 text-center sm:px-8 sm:py-24">
-        <h2
-          id="contact-heading"
-          className="text-3xl font-semibold tracking-tight sm:text-4xl"
-        >
-          تواصل معنا
-        </h2>
+      <div className="mx-auto max-w-3xl px-6 py-20 sm:px-8 lg:py-24">
+        <div className="border border-black/10 bg-white p-8 text-center sm:p-12">
+          <p className="text-sm font-medium tracking-wide text-black/45">
+            منجز لخدمات الأعمال
+          </p>
+          <h2
+            id="contact-heading"
+            className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl"
+          >
+            تواصل معنا
+          </h2>
+          <p className="mx-auto mt-4 max-w-md text-base leading-8 text-black/65">
+            اختر طريقة التواصل المناسبة لك.
+          </p>
 
-        <div className="relative mx-auto mt-10 max-w-sm">
-          <div
-            aria-hidden
-            className="contact-whatsapp-ring pointer-events-none absolute -inset-1 bg-[#25D366]/35 blur-md"
-          />
           <a
             href="https://wa.me/966535088808"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative inline-flex w-full items-center justify-center gap-3 bg-[#25D366] px-6 py-3.5 text-base font-semibold text-black transition duration-300 hover:bg-[#20c05c] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366]"
+            className="mt-10 inline-flex w-full max-w-sm items-center justify-center gap-3 bg-[#25D366] px-6 py-4 text-base font-semibold text-black transition hover:bg-[#20c05c]"
           >
             <WhatsAppIcon className="h-5 w-5" />
-            <span>تواصل عبر واتساب</span>
+            تواصل عبر واتساب
           </a>
-        </div>
 
-        <p className="mt-12 text-sm text-black/55">تابعنا على</p>
-
-        <div className="mx-auto mt-4 flex w-fit items-center gap-1 border border-black/10 bg-[#f7f7f7] p-1.5">
-          {socials.map(({ name, href, Icon }) => (
-            <a
-              key={name}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={name}
-              title={name}
-              className="flex h-11 w-11 items-center justify-center text-black/70 transition duration-300 hover:bg-black hover:text-white"
-            >
-              <Icon className="h-[18px] w-[18px]" />
-            </a>
-          ))}
+          <div className="mt-8 grid gap-2 sm:grid-cols-3">
+            {socials.map(({ name, href, Icon }) => (
+              <a
+                key={name}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 border border-black/10 px-4 py-3 text-sm text-black/70 transition hover:border-black hover:text-black"
+              >
+                <Icon className="h-4 w-4" />
+                {name}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>

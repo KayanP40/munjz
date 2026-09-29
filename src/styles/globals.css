@@ -59,24 +59,3 @@ body {
   }
 }
 
-@keyframes contact-ring {
-  0%,
-  100% {
-    opacity: 0.35;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.7;
-    transform: scale(1.03);
-  }
-}
-
-.contact-whatsapp-ring {
-  animation: contact-ring 2.4s ease-in-out infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .contact-whatsapp-ring {
-    animation: none;
-  }
-}

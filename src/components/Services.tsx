@@ -29,54 +29,77 @@ function whatsappServiceLink(serviceName: string) {
 }
 
 export default function Services() {
+  const [featured, ...rest] = services;
+
   return (
     <section
       id="services"
-      className="border-t border-black/10 bg-white text-black"
+      className="border-t border-black/10 bg-[#f7f7f7] text-black"
       aria-labelledby="services-heading"
     >
-      <div className="mx-auto max-w-6xl px-6 py-20 sm:px-8 lg:py-28">
-        <div className="max-w-2xl">
+      <div className="mx-auto max-w-6xl px-6 py-20 sm:px-8 lg:py-24">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-sm font-medium tracking-wide text-black/45">
+            منجز لخدمات الأعمال
+          </p>
           <h2
             id="services-heading"
-            className="text-3xl font-semibold tracking-tight sm:text-4xl"
+            className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl"
           >
             خدماتنا
           </h2>
-          <p className="mt-4 text-base leading-8 text-black/70 sm:text-lg sm:leading-9">
+          <p className="mt-6 text-base leading-8 text-black/70 sm:text-lg sm:leading-9">
             حلول إلكترونية متكاملة تسهّل إجراءاتك الإدارية والقانونية وتختصر
             عليك الوقت والجهد.
           </p>
         </div>
 
-        <ul className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => (
-            <li
-              key={service.title}
-              className={`group flex flex-col border border-black/10 bg-[#fafafa] p-7 transition duration-300 hover:-translate-y-1 hover:border-black hover:bg-white hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] ${
-                index === 4 ? "sm:col-span-2 lg:col-span-1" : ""
-              }`}
+        <div className="mt-14 grid gap-5 lg:grid-cols-2">
+          <article className="flex flex-col border border-black bg-black p-8 text-white sm:p-10">
+            <span className="text-sm font-medium text-white/45">01</span>
+            <h3 className="mt-8 text-2xl font-semibold tracking-tight sm:text-3xl">
+              {featured.title}
+            </h3>
+            <p className="mt-4 flex-1 text-base leading-8 text-white/70">
+              {featured.body}
+            </p>
+            <a
+              href={whatsappServiceLink(featured.title)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex w-fit bg-white px-5 py-2.5 text-sm font-medium text-black transition hover:bg-white/90"
             >
-              <span className="text-sm font-medium text-black/35 transition group-hover:text-black">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <h3 className="mt-8 text-xl font-semibold tracking-tight sm:text-2xl">
-                {service.title}
-              </h3>
-              <p className="mt-4 flex-1 text-base leading-8 text-black/70">
-                {service.body}
-              </p>
-              <a
-                href={whatsappServiceLink(service.title)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 inline-flex w-fit items-center justify-center bg-black px-5 py-2.5 text-sm font-medium text-white transition duration-300 hover:bg-[#25D366] hover:text-black"
+              اطلب الخدمة
+            </a>
+          </article>
+
+          <ul className="grid gap-5 sm:grid-cols-2">
+            {rest.map((service, index) => (
+              <li
+                key={service.title}
+                className="flex flex-col border border-black/10 bg-white p-6"
               >
-                اطلب الخدمة
-              </a>
-            </li>
-          ))}
-        </ul>
+                <span className="text-sm font-medium text-black/35">
+                  {String(index + 2).padStart(2, "0")}
+                </span>
+                <h3 className="mt-5 text-lg font-semibold tracking-tight">
+                  {service.title}
+                </h3>
+                <p className="mt-3 flex-1 text-sm leading-7 text-black/70">
+                  {service.body}
+                </p>
+                <a
+                  href={whatsappServiceLink(service.title)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-flex w-fit bg-black px-4 py-2 text-sm font-medium text-white transition hover:bg-black/85"
+                >
+                  اطلب الخدمة
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );

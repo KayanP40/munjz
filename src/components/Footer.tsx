@@ -42,12 +42,12 @@ export default function Footer() {
               className="h-10 w-10 object-contain invert"
             />
             <span className="text-base font-semibold tracking-tight">
-              منجز للخدمات الإلكترونية
+              منجز لخدمات الأعمال
             </span>
           </Link>
           <p className="mt-5 max-w-sm text-sm leading-7 text-white/55">
-            نسهّل ونسرّع عملياتك الإدارية والقانونية بخدمات إلكترونية موثوقة
-            للأعمال والعلامات التجارية والملكية الفكرية.
+            نسهّل ونسرّع عملياتك الإدارية والقانونية بخدمات موثوقة للأعمال
+            والعلامات التجارية والملكية الفكرية.
           </p>
         </div>
 
@@ -92,14 +92,14 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="mt-5 inline-flex bg-[#25D366] px-4 py-2.5 text-sm font-semibold text-black transition hover:bg-[#20c05c]"
           >
-            تواصل واتساب
+            اطلب خدمتك
           </a>
         </div>
       </div>
 
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-5 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-          <p>© {year} منجز للخدمات الإلكترونية. جميع الحقوق محفوظة.</p>
+          <p>© {year} منجز لخدمات الأعمال. جميع الحقوق محفوظة.</p>
           <p dir="ltr">@Munjz_sa</p>
         </div>
       </div>

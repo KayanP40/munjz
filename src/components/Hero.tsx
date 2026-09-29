@@ -1,132 +1,98 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-const SLIDES = [
+const slides = [
   {
     src: "/slide1.webp",
-    alt: "منجز للخدمات الإلكترونية — نختصر عليك الإجراءات الإلكترونية",
+    alt: "منجز لخدمات الأعمال",
   },
   {
     src: "/slide2.webp",
-    alt: "منجز للخدمات الإلكترونية — منجز الأقرب إليك",
+    alt: "منجز لخدمات الأعمال",
   },
 ] as const;
 
-const INTERVAL_MS = 5500;
-
 export default function Hero() {
   const [active, setActive] = useState(0);
-  const [paused, setPaused] = useState(false);
-
-  const goTo = useCallback((index: number) => {
-    setActive((index + SLIDES.length) % SLIDES.length);
-  }, []);
-
-  const next = useCallback(() => {
-    setActive((current) => (current + 1) % SLIDES.length);
-  }, []);
-
-  const prev = useCallback(() => {
-    setActive((current) => (current - 1 + SLIDES.length) % SLIDES.length);
-  }, []);
 
   useEffect(() => {
-    if (paused) return;
-
-    const id = window.setInterval(next, INTERVAL_MS);
+    const id = window.setInterval(() => {
+      setActive((current) => (current + 1) % slides.length);
+    }, 5500);
     return () => window.clearInterval(id);
-  }, [next, paused]);
+  }, []);
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-black"
-      aria-roledescription="carousel"
-      aria-label="العروض الرئيسية"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onFocusCapture={() => setPaused(true)}
-      onBlurCapture={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget)) {
-          setPaused(false);
-        }
-      }}
+      className="relative min-h-[78vh] overflow-hidden bg-black text-white lg:min-h-[86vh]"
+      aria-label="القسم الرئيسي"
     >
-      <div className="relative aspect-[1690/653] min-h-[280px] w-full sm:min-h-[360px] lg:min-h-[420px]">
-        {SLIDES.map((slide, index) => {
-          const isActive = index === active;
+      {slides.map((slide, index) => (
+        <Image
+          key={slide.src}
+          src={slide.src}
+          alt={slide.alt}
+          fill
+          priority={index === 0}
+          sizes="100vw"
+          className={`object-cover transition-opacity duration-700 ${
+            index === active ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ))}
 
-          return (
-            <div
-              key={slide.src}
-              className={`absolute inset-0 transition-opacity duration-700 ease-out ${
-                isActive ? "opacity-100" : "pointer-events-none opacity-0"
-              }`}
-              role="group"
-              aria-roledescription="slide"
-              aria-label={`${index + 1} من ${SLIDES.length}`}
-              aria-hidden={!isActive}
-            >
-              <Image
-                src={slide.src}
-                alt={slide.alt}
-                fill
-                priority={index === 0}
-                sizes="100vw"
-                className={`object-cover object-center transition-transform duration-[5500ms] ease-out ${
-                  isActive ? "scale-105" : "scale-100"
-                }`}
-              />
-            </div>
-          );
-        })}
+      <div className="absolute inset-0 bg-black/70" />
+      <div className="absolute inset-0 bg-gradient-to-l from-black/40 via-transparent to-black/50" />
 
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/40 to-transparent" />
-
-        <div
-          className="absolute inset-x-0 bottom-4 z-10 flex items-center justify-center gap-2 sm:bottom-5"
-          role="tablist"
-          aria-label="اختيار الشريحة"
-        >
-          {SLIDES.map((slide, index) => {
-            const isActive = index === active;
-
-            return (
-              <button
-                key={slide.src}
-                type="button"
-                role="tab"
-                aria-selected={isActive}
-                aria-label={`الشريحة ${index + 1}`}
-                onClick={() => goTo(index)}
-                className={`h-1.5 transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white ${
-                  isActive
-                    ? "w-7 bg-white"
-                    : "w-1.5 bg-white/45 hover:bg-white/75"
-                }`}
-              />
-            );
-          })}
+      <div className="relative z-10 mx-auto flex min-h-[78vh] w-full max-w-6xl flex-col justify-center px-6 pb-16 pt-28 sm:px-8 lg:min-h-[86vh] lg:pb-20 lg:pt-32">
+        <p className="text-sm font-medium tracking-wide text-white/60">
+          شريكك في إنجاز معاملات الأعمال
+        </p>
+        <h1 className="mt-4 max-w-3xl text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+          منجز لخدمات الأعمال
+        </h1>
+        <p className="mt-6 max-w-2xl text-base leading-8 text-white/75 sm:text-lg sm:leading-9">
+          نسهّل ونسرّع إجراءاتك الإدارية والقانونية — من تأسيس الشركات وتسجيل
+          العلامات التجارية إلى إدارة التراخيص والموارد البشرية.
+        </p>
+        <div className="mt-10 flex flex-wrap gap-3">
+          <a
+            href="https://wa.me/966535088808"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-white/90"
+          >
+            اطلب خدمتك
+          </a>
+          <a
+            href="#about"
+            className="border border-white/40 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
+          >
+            تعرّف علينا
+          </a>
         </div>
 
-        <button
-          type="button"
-          onClick={prev}
-          aria-label="الشريحة السابقة"
-          className="absolute top-1/2 right-3 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center border border-white/30 bg-black/30 text-white backdrop-blur-sm transition hover:bg-black/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:flex"
+        <div
+          className="absolute inset-x-0 bottom-6 z-10 flex items-center justify-center gap-2"
+          role="tablist"
+          aria-label="اختيار الخلفية"
         >
-          <span aria-hidden>&rsaquo;</span>
-        </button>
-
-        <button
-          type="button"
-          onClick={next}
-          aria-label="الشريحة التالية"
-          className="absolute top-1/2 left-3 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center border border-white/30 bg-black/30 text-white backdrop-blur-sm transition hover:bg-black/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:flex"
-        >
-          <span aria-hidden>&lsaquo;</span>
-        </button>
+          {slides.map((slide, index) => (
+            <button
+              key={slide.src}
+              type="button"
+              role="tab"
+              aria-selected={index === active}
+              aria-label={`الخلفية ${index + 1}`}
+              onClick={() => setActive(index)}
+              className={`h-1.5 transition-all ${
+                index === active ? "w-7 bg-white" : "w-1.5 bg-white/45 hover:bg-white/75"
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
