@@ -1,3 +1,5 @@
+import Reveal from "@/components/Reveal";
+
 const reasons = [
   {
     title: "الاحترافية",
@@ -21,7 +23,7 @@ export default function About() {
       aria-labelledby="about-heading"
     >
       <div className="mx-auto max-w-6xl px-6 py-20 sm:px-8 lg:py-24">
-        <div className="mx-auto max-w-3xl text-center">
+        <Reveal className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-medium tracking-wide text-black/45">
             منجز لخدمات الأعمال
           </p>
@@ -37,17 +39,21 @@ export default function About() {
             العلامة التجارية وخدمات الملكية الفكرية، ويهدف الموقع إلى تسهيل
             وتسريع العمليات الإدارية والقانونية.
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-16">
-          <h3 className="text-center text-2xl font-semibold tracking-tight">
-            لماذا مُنجز؟
-          </h3>
+          <Reveal>
+            <h3 className="text-center text-2xl font-semibold tracking-tight">
+              لماذا مُنجز؟
+            </h3>
+          </Reveal>
           <ul className="mt-10 grid gap-5 sm:grid-cols-3">
             {reasons.map((reason, index) => (
-              <li
+              <Reveal
                 key={reason.title}
-                className="border border-black/10 bg-[#fafafa] p-7"
+                as="li"
+                delay={index * 90}
+                className="motion-safe-hover motion-lift border border-black/10 bg-[#fafafa] p-7"
               >
                 <span className="text-sm font-medium text-black/35">
                   {String(index + 1).padStart(2, "0")}
@@ -58,7 +64,7 @@ export default function About() {
                 <p className="mt-3 text-base leading-8 text-black/70">
                   {reason.body}
                 </p>
-              </li>
+              </Reveal>
             ))}
           </ul>
         </div>

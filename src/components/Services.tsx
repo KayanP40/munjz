@@ -1,3 +1,5 @@
+import Reveal from "@/components/Reveal";
+
 const WHATSAPP_NUMBER = "966535088808";
 
 const services = [
@@ -34,11 +36,11 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="border-t border-black/10 bg-[#f7f7f7] text-black"
+      className="border-t border-black/10 bg-white text-black"
       aria-labelledby="services-heading"
     >
       <div className="mx-auto max-w-6xl px-6 py-20 sm:px-8 lg:py-24">
-        <div className="mx-auto max-w-3xl text-center">
+        <Reveal className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-medium tracking-wide text-black/45">
             منجز لخدمات الأعمال
           </p>
@@ -52,10 +54,13 @@ export default function Services() {
             حلول إلكترونية متكاملة تسهّل إجراءاتك الإدارية والقانونية وتختصر
             عليك الوقت والجهد.
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-14 grid gap-5 lg:grid-cols-2">
-          <article className="flex flex-col border border-black bg-black p-8 text-white sm:p-10">
+          <Reveal
+            as="article"
+            className="motion-safe-hover motion-lift flex flex-col border border-black bg-black p-8 text-white sm:p-10"
+          >
             <span className="text-sm font-medium text-white/45">01</span>
             <h3 className="mt-8 text-2xl font-semibold tracking-tight sm:text-3xl">
               {featured.title}
@@ -67,17 +72,19 @@ export default function Services() {
               href={whatsappServiceLink(featured.title)}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex w-fit bg-white px-5 py-2.5 text-sm font-medium text-black transition hover:bg-white/90"
+              className="motion-safe-hover mt-8 inline-flex w-fit bg-white px-5 py-2.5 text-sm font-medium text-black hover:bg-white/90"
             >
               اطلب الخدمة
             </a>
-          </article>
+          </Reveal>
 
           <ul className="grid gap-5 sm:grid-cols-2">
             {rest.map((service, index) => (
-              <li
+              <Reveal
                 key={service.title}
-                className="flex flex-col border border-black/10 bg-white p-6"
+                as="li"
+                delay={(index + 1) * 80}
+                className="motion-safe-hover motion-lift flex flex-col border border-black/10 bg-[#fafafa] p-6"
               >
                 <span className="text-sm font-medium text-black/35">
                   {String(index + 2).padStart(2, "0")}
@@ -92,11 +99,11 @@ export default function Services() {
                   href={whatsappServiceLink(service.title)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex w-fit bg-black px-4 py-2 text-sm font-medium text-white transition hover:bg-black/85"
+                  className="motion-safe-hover mt-6 inline-flex w-fit bg-black px-4 py-2 text-sm font-medium text-white hover:bg-black/85"
                 >
                   اطلب الخدمة
                 </a>
-              </li>
+              </Reveal>
             ))}
           </ul>
         </div>

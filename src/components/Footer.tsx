@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import Reveal from "@/components/Reveal";
 
 const navLinks = [
   { href: "#about", label: "من نحن" },
   { href: "#services", label: "خدماتنا" },
+  { href: "#process", label: "كيف نعمل" },
   { href: "#clients", label: "عملاؤنا" },
   { href: "#contact", label: "تواصل معنا" },
 ] as const;
@@ -31,7 +33,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-white/10 bg-black text-white">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 sm:px-8 md:grid-cols-[1.4fr_1fr_1fr]">
+      <Reveal className="mx-auto grid max-w-6xl gap-10 px-6 py-14 sm:px-8 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <Link href="/" className="inline-flex items-center gap-3">
             <Image
@@ -90,12 +92,12 @@ export default function Footer() {
             href="https://wa.me/966535088808"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-5 inline-flex bg-[#25D366] px-4 py-2.5 text-sm font-semibold text-black transition hover:bg-[#20c05c]"
+            className="motion-safe-hover mt-5 inline-flex bg-[#25D366] px-4 py-2.5 text-sm font-semibold text-black hover:bg-[#20c05c]"
           >
             اطلب خدمتك
           </a>
         </div>
-      </div>
+      </Reveal>
 
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-5 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between sm:px-8">

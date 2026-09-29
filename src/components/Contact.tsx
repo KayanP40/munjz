@@ -1,3 +1,5 @@
+import Reveal from "@/components/Reveal";
+
 function InstagramIcon({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden className={className}>
@@ -68,7 +70,7 @@ export default function Contact() {
       aria-labelledby="contact-heading"
     >
       <div className="mx-auto max-w-3xl px-6 py-20 sm:px-8 lg:py-24">
-        <div className="border border-black/10 bg-white p-8 text-center sm:p-12">
+        <Reveal className="border border-black/10 bg-white p-8 text-center sm:p-12">
           <p className="text-sm font-medium tracking-wide text-black/45">
             منجز لخدمات الأعمال
           </p>
@@ -86,7 +88,7 @@ export default function Contact() {
             href="https://wa.me/966535088808"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-10 inline-flex w-full max-w-sm items-center justify-center gap-3 bg-[#25D366] px-6 py-4 text-base font-semibold text-black transition hover:bg-[#20c05c]"
+            className="motion-safe-hover motion-lift mt-10 inline-flex w-full max-w-sm items-center justify-center gap-3 bg-[#25D366] px-6 py-4 text-base font-semibold text-black hover:bg-[#20c05c]"
           >
             <WhatsAppIcon className="h-5 w-5" />
             تواصل عبر واتساب
@@ -99,14 +101,14 @@ export default function Contact() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 border border-black/10 px-4 py-3 text-sm text-black/70 transition hover:border-black hover:text-black"
+                className="motion-safe-hover inline-flex items-center justify-center gap-2 border border-black/10 px-4 py-3 text-sm text-black/70 hover:border-black hover:text-black"
               >
                 <Icon className="h-4 w-4" />
                 {name}
               </a>
             ))}
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

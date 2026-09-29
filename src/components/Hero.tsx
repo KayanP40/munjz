@@ -46,7 +46,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/70" />
       <div className="absolute inset-0 bg-gradient-to-l from-black/40 via-transparent to-black/50" />
 
-      <div className="relative z-10 mx-auto flex min-h-[78vh] w-full max-w-6xl flex-col justify-center px-6 pb-16 pt-28 sm:px-8 lg:min-h-[86vh] lg:pb-20 lg:pt-32">
+      <div className="hero-animate relative z-10 mx-auto flex min-h-[78vh] w-full max-w-6xl flex-col justify-center px-6 pb-16 pt-28 sm:px-8 lg:min-h-[86vh] lg:pb-20 lg:pt-32">
         <p className="text-sm font-medium tracking-wide text-white/60">
           شريكك في إنجاز معاملات الأعمال
         </p>
@@ -62,13 +62,13 @@ export default function Hero() {
             href="https://wa.me/966535088808"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-white/90"
+            className="motion-safe-hover bg-white px-6 py-3.5 text-sm font-semibold text-black hover:bg-white/90"
           >
             اطلب خدمتك
           </a>
           <a
             href="#about"
-            className="border border-white/40 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
+            className="motion-safe-hover border border-white/40 px-6 py-3.5 text-sm font-semibold text-white hover:border-white hover:bg-white/10"
           >
             تعرّف علينا
           </a>

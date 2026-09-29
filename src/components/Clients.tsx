@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Reveal from "@/components/Reveal";
 import { clients } from "@/data/clients";
 
 function LogoRow({
@@ -50,7 +51,7 @@ export default function Clients() {
       aria-labelledby="clients-heading"
     >
       <div className="mx-auto max-w-6xl px-6 py-20 sm:px-8 lg:py-24">
-        <div className="mx-auto max-w-3xl text-center">
+        <Reveal className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-medium tracking-wide text-black/45">
             منجز لخدمات الأعمال
           </p>
@@ -64,15 +65,15 @@ export default function Clients() {
             نفتخر بثقة مجموعة من العلامات التجارية والمنشآت التي اعتمدت منجز
             لتسهيل إجراءاتها الإدارية والقانونية.
           </p>
-        </div>
+        </Reveal>
       </div>
 
-      <div className="pb-20 lg:pb-24">
+      <Reveal className="pb-20 lg:pb-24">
         <LogoRow items={rowOne} direction="left" />
         <div className="mt-2">
           <LogoRow items={rowTwo.length ? rowTwo : rowOne} direction="right" />
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

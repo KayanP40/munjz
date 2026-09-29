@@ -9,6 +9,7 @@ const navLinks = [
   { href: "/", label: "الرئيسية" },
   { href: "/#about", label: "من نحن" },
   { href: "/#services", label: "خدماتنا" },
+  { href: "/#process", label: "كيف نعمل" },
   { href: "/#clients", label: "عملاؤنا" },
   { href: "/#contact", label: "تواصل معنا" },
 ] as const;
