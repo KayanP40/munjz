@@ -35,17 +35,18 @@ export default function Footer() {
     <footer className="border-t border-white/10 bg-black text-white">
       <Reveal className="mx-auto grid max-w-6xl gap-10 px-6 py-14 sm:px-8 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <Link href="/" className="inline-flex items-center gap-3">
+          <Link
+            href="/"
+            className="inline-flex items-center"
+            aria-label="منجز لخدمات الأعمال"
+          >
             <Image
-              src="/logo.avif"
-              alt="منجز"
-              width={40}
-              height={40}
-              className="h-10 w-10 object-contain invert"
+              src="/logo2.jpeg"
+              alt="منجز لخدمات الأعمال"
+              width={160}
+              height={160}
+              className="h-14 w-auto object-contain invert"
             />
-            <span className="text-base font-semibold tracking-tight">
-              منجز لخدمات الأعمال
-            </span>
           </Link>
           <p className="mt-5 max-w-sm text-sm leading-7 text-white/55">
             نسهّل ونسرّع عملياتك الإدارية والقانونية بخدمات موثوقة للأعمال

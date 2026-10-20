@@ -46,22 +46,20 @@ export default function Header() {
       <div className="mx-auto flex h-[4.25rem] max-w-6xl items-center justify-between px-6 sm:px-8">
         <Link
           href="/"
-          className="flex items-center gap-3"
+          className="flex items-center"
           onClick={() => setOpen(false)}
+          aria-label="منجز لخدمات الأعمال"
         >
           <Image
-            src="/logo.avif"
-            alt="منجز"
-            width={36}
-            height={36}
-            className={`h-9 w-9 object-contain transition ${
-              overDark ? "brightness-0 invert" : ""
+            src="/logo2.jpeg"
+            alt="منجز لخدمات الأعمال"
+            width={160}
+            height={160}
+            className={`h-12 w-auto object-contain transition sm:h-14 ${
+              overDark ? "invert" : ""
             }`}
             priority
           />
-          <span className="text-sm font-semibold tracking-tight sm:text-base">
-            منجز لخدمات الأعمال
-          </span>
         </Link>
 
         <nav

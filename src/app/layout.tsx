@@ -4,12 +4,72 @@ import { type Metadata } from "next";
 import { IBM_Plex_Sans_Arabic } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "منجز لخدمات الأعمال",
-  description:
-    "خدمات متعددة في مجال التعامل الرقمي والإداري الخاصة بالموارد البشرية والخدمات العامة للأعمال والمشاريع التجارية وتسجيل العلامة التجارية وخدمات الملكية الفكرية",
-  icons: [{ rel: "icon", url: "/logo.avif", type: "image/avif" }],
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  keywords: [
+    "منجز",
+    "خدمات أعمال",
+    "تأسيس شركات",
+    "تسجيل علامة تجارية",
+    "ملكية فكرية",
+    "موارد بشرية",
+    "إقامة مميزة",
+    "السعودية",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+  icons: {
+    icon: [{ url: siteConfig.logo, type: "image/jpeg" }],
+    apple: [{ url: siteConfig.ogImage, type: "image/jpeg" }],
+    shortcut: siteConfig.logo,
+  },
+  openGraph: {
+    type: "website",
+    locale: siteConfig.locale,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 1200,
+        alt: siteConfig.name,
+        type: "image/jpeg",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+  },
 };
 
 const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
@@ -24,6 +84,7 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl" className={`${ibmPlexSansArabic.variable}`}>
       <body className="font-sans antialiased">
+        <JsonLd />
         <Header />
         {children}
         <Footer />
