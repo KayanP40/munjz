@@ -73,9 +73,12 @@ const servicesSchema = {
       "@type": "Service",
       "@id": `${siteConfig.url}/#service-${category.id}`,
       name: category.title,
-      description: category.legalNotice
-        ? `${category.title}. ${category.legalNotice}`
-        : category.title,
+      description: [
+        category.description ?? category.title,
+        category.legalNotice,
+      ]
+        .filter(Boolean)
+        .join(" "),
       provider: { "@id": `${siteConfig.url}/#organization` },
       areaServed: saudiArabia,
       availableChannel: remoteChannel,

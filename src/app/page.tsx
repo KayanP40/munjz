@@ -10,9 +10,9 @@ export default function HomePage() {
     <main className="min-h-screen bg-white text-black">
       <Hero />
       <About />
+      <Clients />
       <Services />
       <Process />
-      <Clients />
       <Contact />
     </main>
   );

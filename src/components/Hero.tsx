@@ -46,29 +46,30 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/70" />
       <div className="absolute inset-0 bg-gradient-to-l from-black/40 via-transparent to-black/50" />
 
-      <div className="hero-animate relative z-10 mx-auto flex min-h-[78vh] w-full max-w-6xl flex-col justify-center px-6 pb-16 pt-28 sm:px-8 lg:min-h-[86vh] lg:pb-20 lg:pt-32">
+      <div className="hero-animate relative z-10 mx-auto flex min-h-[78vh] w-full max-w-6xl flex-col justify-center px-6 pb-16 pt-32 sm:px-8 lg:min-h-[86vh] lg:pb-20 lg:pt-36">
         <p className="text-sm font-medium tracking-wide text-white/60">
           شريكك في إنجاز معاملات الأعمال
         </p>
-        <h1 className="mt-4 max-w-3xl text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+        <h1 className="mt-4 max-w-3xl text-[2rem] font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
           منجز لخدمات الأعمال
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-8 text-white/75 sm:text-lg sm:leading-9">
-          نسهّل ونسرّع إجراءاتك الإدارية والقانونية — من تأسيس الشركات وتسجيل
-          العلامات التجارية إلى إدارة التراخيص والموارد البشرية.
+          نسهّل ونسرّع إجراءاتك الإدارية والقانونية والتسويقية — من تأسيس
+          الشركات وتسجيل العلامات التجارية إلى الهوية والتسويق الرقمي والموارد
+          البشرية.
         </p>
-        <div className="mt-10 flex flex-wrap gap-3">
+        <div className="mt-10 flex flex-col gap-3 sm:flex-row">
           <a
             href="https://wa.me/966535088808"
             target="_blank"
             rel="noopener noreferrer"
-            className="motion-safe-hover bg-white px-6 py-3.5 text-sm font-semibold text-black hover:bg-white/90"
+            className="motion-safe-hover inline-flex w-full items-center justify-center bg-white px-6 py-3.5 text-sm font-semibold text-black hover:bg-white/90 sm:w-auto"
           >
             اطلب خدمتك
           </a>
           <a
             href="#about"
-            className="motion-safe-hover border border-white/40 px-6 py-3.5 text-sm font-semibold text-white hover:border-white hover:bg-white/10"
+            className="motion-safe-hover inline-flex w-full items-center justify-center border border-white/40 px-6 py-3.5 text-sm font-semibold text-white hover:border-white hover:bg-white/10 sm:w-auto"
           >
             تعرّف علينا
           </a>

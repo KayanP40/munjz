@@ -70,7 +70,7 @@ function ServiceCard({
     <Reveal
       as="article"
       delay={(index % 6) * 60}
-      className="motion-safe-hover motion-lift flex h-full flex-col border border-black/10 bg-[#fafafa] p-6 text-black sm:p-7"
+      className="motion-safe-hover motion-lift flex h-full w-full flex-col border border-black/10 bg-[#fafafa] p-6 text-black sm:p-7"
     >
       <h3 className="text-lg font-semibold tracking-tight">{service.title}</h3>
       <ServiceDetails service={service} />
@@ -108,39 +108,41 @@ export default function Services() {
         </Reveal>
 
         <div className="mt-14">
-          <div
-            role="tablist"
-            aria-label="فئات الخدمات"
-            className="flex flex-wrap items-center justify-center gap-x-1 gap-y-2 border-b border-black/10"
-          >
-            {tabs.map((tab) => {
-              const selected = tab.id === activeTab.id;
-              return (
-                <button
-                  key={tab.id}
-                  type="button"
-                  role="tab"
-                  id={`${tabsId}-${tab.id}`}
-                  aria-selected={selected}
-                  aria-controls={`${tabsId}-panel-${tab.id}`}
-                  tabIndex={selected ? 0 : -1}
-                  onClick={() => setActiveId(tab.id)}
-                  className={`relative px-3 py-3 text-sm font-medium transition sm:px-4 sm:text-base ${
-                    selected
-                      ? "text-black"
-                      : "text-black/45 hover:text-black/75"
-                  }`}
-                >
-                  {tab.tabLabel}
-                  <span
-                    className={`absolute inset-x-2 -bottom-px h-0.5 bg-black transition sm:inset-x-3 ${
-                      selected ? "opacity-100" : "opacity-0"
+          <div className="-mx-6 border-b border-black/10 sm:mx-0">
+            <div
+              role="tablist"
+              aria-label="فئات الخدمات"
+              className="flex items-center gap-x-1 overflow-x-auto px-6 [-ms-overflow-style:none] [scrollbar-width:none] sm:flex-wrap sm:justify-center sm:overflow-visible sm:px-0 [&::-webkit-scrollbar]:hidden"
+            >
+              {tabs.map((tab) => {
+                const selected = tab.id === activeTab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    type="button"
+                    role="tab"
+                    id={`${tabsId}-${tab.id}`}
+                    aria-selected={selected}
+                    aria-controls={`${tabsId}-panel-${tab.id}`}
+                    tabIndex={selected ? 0 : -1}
+                    onClick={() => setActiveId(tab.id)}
+                    className={`relative shrink-0 whitespace-nowrap px-3 py-3 text-sm font-medium transition sm:px-4 sm:text-base ${
+                      selected
+                        ? "text-black"
+                        : "text-black/45 hover:text-black/75"
                     }`}
-                    aria-hidden
-                  />
-                </button>
-              );
-            })}
+                  >
+                    {tab.tabLabel}
+                    <span
+                      className={`absolute inset-x-2 -bottom-px h-0.5 bg-black transition sm:inset-x-3 ${
+                        selected ? "opacity-100" : "opacity-0"
+                      }`}
+                      aria-hidden
+                    />
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           <div
@@ -150,9 +152,16 @@ export default function Services() {
             className="mt-8"
           >
             {!isSingle ? (
-              <p className="text-center text-sm font-medium tracking-wide text-black/45">
-                {activeTab.title}
-              </p>
+              <div className="mx-auto max-w-2xl text-center">
+                <p className="text-sm font-medium tracking-wide text-black/45">
+                  {activeTab.title}
+                </p>
+                {activeTab.description ? (
+                  <p className="mt-3 text-sm leading-7 text-black/70">
+                    {activeTab.description}
+                  </p>
+                ) : null}
+              </div>
             ) : null}
 
             {activeTab.legalNotice ? (

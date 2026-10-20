@@ -8,9 +8,9 @@ import { useEffect, useState } from "react";
 const navLinks = [
   { href: "/", label: "الرئيسية" },
   { href: "/#about", label: "من نحن" },
+  { href: "/#clients", label: "عملاؤنا" },
   { href: "/#services", label: "خدماتنا" },
   { href: "/#process", label: "كيف نعمل" },
-  { href: "/#clients", label: "عملاؤنا" },
   { href: "/#contact", label: "تواصل معنا" },
 ] as const;
 
@@ -43,7 +43,7 @@ export default function Header() {
           : "border-black/10 bg-white/95 text-black backdrop-blur-md"
       }`}
     >
-      <div className="mx-auto flex h-[4.25rem] max-w-6xl items-center justify-between px-6 sm:px-8">
+      <div className="mx-auto flex h-[5.5rem] max-w-6xl items-center justify-between px-6 sm:h-[6.25rem] sm:px-8">
         <Link
           href="/"
           className="flex items-center"
@@ -53,9 +53,9 @@ export default function Header() {
           <Image
             src="/logo2.jpeg"
             alt="منجز لخدمات الأعمال"
-            width={160}
-            height={160}
-            className={`h-12 w-auto object-contain transition sm:h-14 ${
+            width={280}
+            height={280}
+            className={`h-[4.75rem] w-auto object-contain transition sm:h-[5.5rem] ${
               overDark ? "invert" : ""
             }`}
             priority

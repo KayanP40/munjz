@@ -36,8 +36,9 @@ export default function About() {
           <p className="mt-6 text-base leading-8 text-black/70 sm:text-lg sm:leading-9">
             خدمات إلكترونية متعددة في مجال التعامل الرقمي والإداري الخاصة
             بالموارد البشرية والخدمات العامة للأعمال والمشاريع التجارية وتسجيل
-            العلامة التجارية وخدمات الملكية الفكرية، ويهدف الموقع إلى تسهيل
-            وتسريع العمليات الإدارية والقانونية.
+            العلامة التجارية والهوية والتسويق الرقمي وخدمات الملكية الفكرية،
+            ويهدف الموقع إلى تسهيل وتسريع العمليات الإدارية والقانونية
+            والتسويقية.
           </p>
         </Reveal>
 
@@ -53,7 +54,7 @@ export default function About() {
                 key={reason.title}
                 as="li"
                 delay={index * 90}
-                className="motion-safe-hover motion-lift border border-black/10 bg-[#fafafa] p-7"
+                className="motion-safe-hover motion-lift w-full border border-black/10 bg-[#fafafa] p-7"
               >
                 <span className="text-sm font-medium text-black/35">
                   {String(index + 1).padStart(2, "0")}

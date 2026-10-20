@@ -23,6 +23,11 @@ export const metadata: Metadata = {
     "خدمات أعمال",
     "تأسيس شركات",
     "تسجيل علامة تجارية",
+    "الهوية التجارية",
+    "التسويق الرقمي",
+    "تصميم شعارات",
+    "تصميم مواقع إلكترونية",
+    "تطوير مواقع",
     "ملكية فكرية",
     "موارد بشرية",
     "إقامة مميزة",
@@ -43,9 +48,11 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [{ url: siteConfig.logo, type: "image/jpeg" }],
-    apple: [{ url: siteConfig.ogImage, type: "image/jpeg" }],
-    shortcut: siteConfig.logo,
+    icon: [
+      { url: "/logo2.jpeg", type: "image/jpeg", sizes: "any" },
+    ],
+    apple: [{ url: "/logo2.jpeg", type: "image/jpeg" }],
+    shortcut: "/logo2.jpeg",
   },
   openGraph: {
     type: "website",
