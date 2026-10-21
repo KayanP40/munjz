@@ -43,7 +43,7 @@ export default function Header() {
           : "border-black/10 bg-white/95 text-black backdrop-blur-md"
       }`}
     >
-      <div className="mx-auto flex h-[7rem] max-w-6xl items-center justify-between px-6 sm:h-[8rem] sm:px-8">
+      <div className="mx-auto flex h-[6rem] max-w-6xl items-center justify-between px-6 sm:h-[6.75rem] sm:px-8">
         <Link
           href="/"
           className="flex items-center"
@@ -55,7 +55,7 @@ export default function Header() {
             alt="منجز لخدمات الأعمال"
             width={509}
             height={768}
-            className={`h-[6.25rem] w-auto object-contain transition sm:h-[7.25rem] ${
+            className={`h-[5rem] w-auto object-contain transition sm:h-[5.75rem] ${
               overDark ? "invert" : ""
             }`}
             priority
