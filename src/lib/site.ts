@@ -12,6 +12,6 @@ export const siteConfig = {
     x: "https://twitter.com/Munjz_sa",
     tiktok: "https://www.tiktok.com/@Munjz_sa",
   },
-  ogImage: "/og-image.jpg",
+  ogImage: "/logo1.jpeg",
   logo: "/logo2.jpeg",
 } as const;
