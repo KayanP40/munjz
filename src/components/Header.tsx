@@ -43,7 +43,7 @@ export default function Header() {
           : "border-black/10 bg-white/95 text-black backdrop-blur-md"
       }`}
     >
-      <div className="mx-auto flex h-[5.5rem] max-w-6xl items-center justify-between px-6 sm:h-[6.25rem] sm:px-8">
+      <div className="mx-auto flex h-[7rem] max-w-6xl items-center justify-between px-6 sm:h-[8rem] sm:px-8">
         <Link
           href="/"
           className="flex items-center"
@@ -51,11 +51,11 @@ export default function Header() {
           aria-label="منجز لخدمات الأعمال"
         >
           <Image
-            src="/logo2.jpeg"
+            src="/Header-logo.jpeg"
             alt="منجز لخدمات الأعمال"
-            width={280}
-            height={280}
-            className={`h-[4.75rem] w-auto object-contain transition sm:h-[5.5rem] ${
+            width={509}
+            height={768}
+            className={`h-[6.25rem] w-auto object-contain transition sm:h-[7.25rem] ${
               overDark ? "invert" : ""
             }`}
             priority

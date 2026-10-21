@@ -46,7 +46,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/70" />
       <div className="absolute inset-0 bg-gradient-to-l from-black/40 via-transparent to-black/50" />
 
-      <div className="hero-animate relative z-10 mx-auto flex min-h-[78vh] w-full max-w-6xl flex-col justify-center px-6 pb-16 pt-32 sm:px-8 lg:min-h-[86vh] lg:pb-20 lg:pt-36">
+      <div className="hero-animate relative z-10 mx-auto flex min-h-[78vh] w-full max-w-6xl flex-col justify-center px-6 pb-16 pt-36 sm:px-8 lg:min-h-[86vh] lg:pb-20 lg:pt-40">
         <p className="text-sm font-medium tracking-wide text-white/60">
           شريكك في إنجاز معاملات الأعمال
         </p>
